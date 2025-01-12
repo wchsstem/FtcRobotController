@@ -26,7 +26,7 @@ public class PIDController {
         // Proportional term
         double proportional = Kp * error;
 
-        // Integral term with anti-windup
+        // Integral term with anti-windup values
         integralSum += error * deltaTime;
         integralSum = Math.max(-integralLimit, Math.min(integralLimit, integralSum));
         double integral = Ki * integralSum;
@@ -46,7 +46,7 @@ public class PIDController {
         return output;
     }
 
-    // Optionally, add methods to dynamically set PID coefficients
+    // methods used to dynamically set PID coefficients
     public void setKp(double Kp) {
         this.Kp = Kp;
     }
